@@ -1,0 +1,13 @@
+[user]
+	name = Ankit Aggarwal
+	email = ankitaggarwal@gmail.com
+	nane = Ankit Aggarwal
+[github]
+	user = structAnkit
+	token = 
+[color]
+	ui = auto
+[core]
+	editor = subl -w
+[credential]
+	helper = osxkeychain
