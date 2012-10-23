@@ -1,10 +1,13 @@
 #!/bin/sh
 
-# User bin
+# User binaries
 mkdir $HOME/bin
 
 # Google Chrome
 open "http://www.google.com/chrome"
+
+# Source Code Pro
+open "http://sourceforge.net/projects/sourcecodepro.adobe/files/latest/download"
 
 # Dropbox
 open "https://www.dropbox.com/downloading?os=mac"
@@ -13,10 +16,9 @@ open "https://www.dropbox.com/downloading?os=mac"
 open "http://programming.jugglershu.net/xvim"
 
 # Sublime Text 2
+open "http://www.sublimetext.com/nightly"
 # Remove repeat-blocking
 defaults write -g ApplePressAndHoldEnabled -bool false
-
-open "http://www.sublimetext.com/nightly"
 
 echo "Install Dropbox and Sublime Text 2 first then press ENTER to continue..."
 read -s
@@ -52,13 +54,8 @@ brew install git
 # Copy dotfiles
 DOT_DIR=$HOME/dotfiles
 git clone git://github.com/structAnkit/dotfiles.git $DOT_DIR
-rm -rf $HOME/.profile $HOME/.bash_profile $HOME/.bashrc $HOME/.zshrc 
-ln -s $DOT_DIR/.profile $HOME/.profile
-ln -s $DOT_DIR/.bashrc $HOME/.bash_profile
-ln -s $DOT_DIR/.bashrc $HOME/.bashrc
-ln -s $DOT_DIR/.zshrc $HOME/.zshrc
-ln -s $DOT_DIR/.gitconfig $HOME/.gitconfig
-ln -s $DOT_DIR/.jshintrc $HOME/.jshintrc
+rm -rf $HOME/.profile $HOME/.bash_profile $HOME/.bashrc $HOME/.zshrc $HOME/.vimrc $HOME/.xvimrc $HOME/.gitconfig $HOME/.jshintrc
+find "$DOT_DIR/\.*" -d 0 -type f -exec ln -s {} . \;
 
 # Languages/Platforms/SDKs
 # Next line is to install Automake/AutoConf/GCC4.2 for RVM
