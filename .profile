@@ -3,9 +3,18 @@ alias cd..="cd .."
 alias h="history"
 alias ls='ls -AFG'
 alias ll='ls -l'
+alias lnn='bulkSymLink'
 
 # Functions
+function bulkSymLink() {
+  if [ -s "$2" ]; then
+    OUT="$2"
+  else
+    OUT="."
+  fi
 
+  find "$1" -type f -depth 1 -exec ln -s {} $OUT \;
+}
 
 # General Environment Variables
 PATH=$PATH:$HOME/bin
