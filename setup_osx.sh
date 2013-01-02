@@ -5,23 +5,23 @@ mkdir $HOME/bin
 
 # Google Chrome
 open "http://www.google.com/chrome"
+read -s -p "Install Google Chrome first then press ENTER to continue..."
 
 # Dropbox
-open "https://www.dropbox.com/downloading?os=mac"
+open -a Chrome -g "https://www.dropbox.com/downloading?os=mac"
 
 # Source Code Pro
-open "http://sourceforge.net/projects/sourcecodepro.adobe/files/latest/download"
+open -a Chrome -g "http://sourceforge.net/projects/sourcecodepro.adobe/files/latest/download"
 
 # XVIM for Xcode
-open "http://programming.jugglershu.net/xvim"
+open -a Chrome "http://programming.jugglershu.net/xvim"
 
 # Sublime Text 2
-open "http://www.sublimetext.com/nightly"
+open -a Chrome "http://www.sublimetext.com/nightly"
 # Remove repeat-blocking
 defaults write -g ApplePressAndHoldEnabled -bool false
 
-echo "Install Dropbox and Sublime Text 2 first then press ENTER to continue..."
-read -s
+read -s -p "Install Dropbox and Sublime Text 2 first then press ENTER to continue..."
 
 ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
 ln -s $DROPBOX_DIR/Development $HOME/dev
@@ -39,8 +39,7 @@ curl http://sublime.wbond.net/Package%20Control.sublime-package -o "$ST2_DIR/In
 ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
 brew doctor
 
-echo "Fix any errors with brew then press ENTER to continue..."
-read -s
+read -s -p "Fix any errors with brew then press ENTER to continue..."
 
 # Git
 brew install git
