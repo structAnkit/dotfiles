@@ -17,7 +17,7 @@ function bulkSymLink() {
 }
 
 # General Environment Variables
-PATH=$PATH:$HOME/bin
+PATH=$HOME/bin:$PATH
 
 # Desktop PC
 export PC_USER=ankit
@@ -39,13 +39,12 @@ alias glom='git pull origin master'
 # Programming Languages and Platforms
 
 # Android
-export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r20.0.3
+export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r21.0.1
 export ANDROID_SDK_HOME=$ANDROID_SDK_ROOT
 PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
 PATH=$ANDROID_SDK_HOME/tools:$PATH
 
 # Node.js
-#export NODE_PATH="/usr/local/lib/node_modules"
 PATH=/usr/local/share/npm/bin:$PATH
 
 # Python
