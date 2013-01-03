@@ -1,13 +1,22 @@
 [user]
 	name = Ankit Aggarwal
-	email = ankitaggarwal@gmail.com
+	email = ankit@spotify.com
 [github]
 	user = structAnkit
 	token = 
 [color]
 	ui = true
+	diff = auto
+	status = auto
+	branch = auto
 [core]
 	excludesfile = /Users/ankit/.gitignore
 	editor = subl -w
+	autocrlf = input
+	safecrlf = true
 [credential]
 	helper = osxkeychain
+[push]
+	default = tracking
+[branch]
+	autosetuprebase = always

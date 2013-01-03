@@ -4,6 +4,7 @@ alias h="history"
 alias ls='ls -AFG'
 alias ll='ls -l'
 alias lnn='bulkSymLink'
+alias mread='read $1 | more'
 
 # Functions
 function bulkSymLink() {
