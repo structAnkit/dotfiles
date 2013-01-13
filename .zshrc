@@ -33,7 +33,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# Autoload ZSH modules
+autoload -U zmv
+
 if [ -f "$HOME/.profile" ]; then
     source "$HOME/.profile"
 fi
