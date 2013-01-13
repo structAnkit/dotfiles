@@ -4,6 +4,7 @@ alias h="history"
 alias ls='ls -AFG'
 alias ll='ls -l'
 alias lnn='bulkSymLink'
+alias mcat='cat "$1" | more'
 
 # Functions
 # Figure out how to rename/move a file in one folder without having to type path in second argument
@@ -28,8 +29,8 @@ export PC_MAC_ADDR='00:25:22:B4:33:92'
 
 # Git
 alias gcl='git clone'
-alias gc='git commit -m'
-alias gca='git commit -am'
+alias gc='git commit'
+alias gca='git commit --ammend'
 alias gs='git status'
 alias gp='git push'
 alias gpom='git push origin master'
@@ -48,13 +49,13 @@ PATH=$ANDROID_SDK_HOME/tools:$PATH
 
 # Node.js
 #export NODE_PATH=/usr/local/lib/node_modules
-#PATH=/usr/local/share/npm/bin:$PATH
+PATH=/usr/local/share/npm/bin:$PATH
 
 # Nodejitsu
 alias jita='jitsu apps'
-alias jitd='jitsu databases' 
-alias jite='jitsu env' 
-alias jitl='jitsu logs' 
+alias jitd='jitsu databases'
+alias jite='jitsu env'
+alias jitl='jitsu logs'
 
 # Python
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
