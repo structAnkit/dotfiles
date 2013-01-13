@@ -43,7 +43,7 @@ alias glom='git pull origin master'
 # Programming Languages and Platforms
 
 # Android
-export ANDROID_SDK_HOME=$HOME/android-sdk
+export ANDROID_SDK_HOME=$HOME/adt-bundle-mac-x86_64/sdk
 PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
 PATH=$ANDROID_SDK_HOME/tools:$PATH
 
