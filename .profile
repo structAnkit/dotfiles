@@ -6,6 +6,7 @@ alias ll='ls -l'
 alias lnn='bulkSymLink'
 
 # Functions
+# Figure out how to rename/move a file in one folder without having to type path in second argument
 function bulkSymLink() {
   if [ -s "$2" ]; then
     OUT="$2"
@@ -17,7 +18,7 @@ function bulkSymLink() {
 }
 
 # General Environment Variables
-PATH=$PATH:$HOME/bin
+PATH=$HOME/bin:$PATH
 
 # Desktop PC
 export PC_USER=ankit
@@ -35,18 +36,25 @@ alias gpom='git push origin master'
 alias gl='git pull'
 alias glom='git pull origin master'
 
+# Homebrew
+#PATH=/usr/local/bin:$PATH
 
 # Programming Languages and Platforms
 
 # Android
-export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r20.0.3
-export ANDROID_SDK_HOME=$ANDROID_SDK_ROOT
+export ANDROID_SDK_HOME=$HOME/android-sdk
 PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
 PATH=$ANDROID_SDK_HOME/tools:$PATH
 
 # Node.js
-#export NODE_PATH="/usr/local/lib/node_modules"
-PATH=/usr/local/share/npm/bin:$PATH
+#export NODE_PATH=/usr/local/lib/node_modules
+#PATH=/usr/local/share/npm/bin:$PATH
+
+# Nodejitsu
+alias jita='jitsu apps'
+alias jitd='jitsu databases' 
+alias jite='jitsu env' 
+alias jitl='jitsu logs' 
 
 # Python
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
