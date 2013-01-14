@@ -5,6 +5,7 @@ alias ls='ls -AFG'
 alias ll='ls -l'
 alias lnn='bulkSymLink'
 alias mcat='cat "$1" | more'
+alias mkcd='mkdir "$1" && cd "$1"'
 
 # Functions
 function bulkSymLink() {
