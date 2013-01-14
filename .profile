@@ -29,6 +29,7 @@ export PC_FTP_PORT=11321
 export PC_MAC_ADDR='00:25:22:B4:33:92'
 
 # Git
+alias ga='git add'
 alias gcl='git clone'
 alias gc='git commit'
 alias gca='git commit --ammend'
