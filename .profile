@@ -5,10 +5,14 @@ alias ls='ls -AFG'
 alias ll='ls -l'
 alias lnn='bulkSymLink'
 alias mcat='cat "$1" | more'
-alias mkcd='mkdir "$1" && cd "$1"'
 
 # Functions
 # Figure out how to rename/move a file in one folder without having to type path in second argument
+
+function mkcd() {
+  mkdir -p "$@" && cd "$@"
+}
+
 function bulkSymLink() {
   if [ -s "$2" ]; then
     OUT="$2"
@@ -34,6 +38,7 @@ alias gcl='git clone'
 alias gc='git commit'
 alias gca='git commit --amend'
 alias gd='git diff'
+alias gg='git log'
 alias gs='git status'
 alias gp='git push'
 alias gpom='git push origin master'
@@ -46,9 +51,13 @@ alias glom='git pull origin master'
 # Programming Languages and Platforms
 
 # Android
-export ANDROID_SDK_HOME=$HOME/adt-bundle-mac-x86_64/sdk
-PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
-PATH=$ANDROID_SDK_HOME/tools:$PATH
+export ADT=$HOME/adt-bundle-mac-x86_64
+export ANDROID_SDK=$ADT/sdk
+PATH=$ANDROID_SDK/platform-tools:$PATH
+PATH=$ANDROID_SDK/tools:$PATH
+
+export ANDROID_NDK=$ADT/ndk
+export ANDROID_TOOLCHAIN=$ANDROID_NDK
 
 # Node.js
 #export NODE_PATH=/usr/local/lib/node_modules
@@ -61,7 +70,8 @@ alias jite='jitsu env'
 alias jitl='jitsu logs'
 
 # Python
-[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+#[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+PATH=/usr/local/share/python:$PATH
 
 # Ruby
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

@@ -10,3 +10,5 @@ for f in $(command ls ~/.node-completion); do
   test -f "$f" && . "$f"
 done
 # }}}
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
