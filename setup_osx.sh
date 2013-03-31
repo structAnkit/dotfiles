@@ -24,20 +24,32 @@ open -a "$CHROME_DIR" "http://code.google.com/p/iterm2/downloads/list"
 # Alfred
 open -a "$CHROME_DIR" "http://www.alfredapp.com/#download-alfred"
 
+# Remove repeat-blocking for Sublime Text
+defaults write -g ApplePressAndHoldEnabled -bool false
+
 # Sublime Text 2
 open -a "$CHROME_DIR" "http://www.sublimetext.com/nightly"
 ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
-# Remove repeat-blocking
-defaults write -g ApplePressAndHoldEnabled -bool false
+
+# Sublime Text 3
+open -a "$CHROME_DIR" "http://www.sublimetext.com/3dev"
+#ln -s "/Applications/Sublime Text 3.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
 
 read -s -p "Install Dropbox and Sublime Text 2 first then press ENTER to continue..."
 
-DD_ST2_DIR="$DROPBOX_DIR/AppData/Sublime Text 2"
+DB_ST2_DIR="$DROPBOX_DIR/AppData/Sublime Text 2"
 ST2_DIR="$HOME/Library/Application Support/Sublime Text 2"
 mkdir -p "$ST2_DIR" "$ST2_DIR"/Installed\ Packages "$ST2_DIR/Packages" "$ST2_DIR/Settings"
-ln -s "$DD_ST2_DIR/Packages/User" "$ST2_DIR/Packages/User"
-cp "$DD_ST2_DIR/Settings/License.sublime_license" "$ST2_DIR/Settings/License.sublime_license"
+ln -s "$DB_ST2_DIR/Packages/User" "$ST2_DIR/Packages/User"
+cp "$DB_ST2_DIR/Settings/License.sublime_license" "$ST2_DIR/Settings/License.sublime_license"
 curl http://sublime.wbond.net/Package%20Control.sublime-package -o "$ST2_DIR"/Installed\ Packages/Package\ Control.sublime-package
+
+DB_ST3_DIR="$DROPBOX_DIR/AppData/Sublime Text 3"
+ST3_DIR="$HOME/Library/Application Support/Sublime Text 3"
+mkdir -p "$ST3_DIR/Packages" "$ST3_DIR/Local"
+ln -s "$DB_ST3_DIR/Packages/User" "$ST3_DIR/Packages/User"
+ln -s "$DB_ST3_DIR/Local/License.sublime_license" "$ST3_DIR/Local/License.sublime_license"
+#curl http://sublime.wbond.net/Package%20Control.sublime-package -o "$ST3_DIR"/Installed\ Packages/Package\ Control.sublime-package
 
 # Homebrew
 ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
@@ -77,8 +89,10 @@ brew install cmake autoconf automake apple-gcc42
 
 # Node.js
 brew install node
-npm install -g express jshint node-dev coffee-script grunt jitsu twilio sendgrid
-npm search
+npm install -g express jshint node-dev coffee-script grunt grunt-cli jitsu twilio sendgrid
+
+# Go
+brew install go
 
 # Java
 brew install maven
@@ -97,7 +111,7 @@ pip3 install virtualenv virtualenvwrapper
 
 # RVM
 curl -L "https://get.rvm.io" | bash -s stable --ruby
+gem install compass sass
 
 # Miscellaneous
-brew install ack watch bash dart go rust
-gem install compass sass
+brew install ack watch bash dart rust

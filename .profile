@@ -4,6 +4,7 @@ alias h="history"
 alias ls='ls -AFG'
 alias ll='ls -l'
 alias lnn='bulkSymLink'
+alias lcat='cat "$1" | less'
 alias mcat='cat "$1" | more'
 
 # Functions
@@ -34,16 +35,18 @@ export PC_MAC_ADDR='00:25:22:B4:33:92'
 
 # Git
 alias ga='git add'
-alias gcl='git clone'
+alias gb='git branch'
 alias gc='git commit'
 alias gca='git commit --amend'
+alias gcl='git clone'
+alias gco='git checkout'
 alias gd='git diff'
 alias gg='git log'
-alias gs='git status'
+alias gl='git pull'
 alias gp='git push'
 alias gpom='git push origin master'
-alias gl='git pull'
-alias glom='git pull origin master'
+alias gpor='git push origin HEAD:refs/for/master'
+alias gs='git status'
 
 # Homebrew
 #PATH=/usr/local/bin:$PATH
@@ -51,13 +54,12 @@ alias glom='git pull origin master'
 # Programming Languages and Platforms
 
 # Android
-export ADT=$HOME/adt-bundle-mac-x86_64
-export ANDROID_SDK=$ADT/sdk
+export ANDROID_HOME=$HOME/adt-bundle-mac-x86_64
+export ANDROID_SDK=$ANDROID_HOME/sdk
+export ANDROID_NDK=$ANDROID_HOME/ndk
+export ANDROID_TOOLCHAIN=$ANDROID_NDK
 PATH=$ANDROID_SDK/platform-tools:$PATH
 PATH=$ANDROID_SDK/tools:$PATH
-
-export ANDROID_NDK=$ADT/ndk
-export ANDROID_TOOLCHAIN=$ANDROID_NDK
 
 # Node.js
 #export NODE_PATH=/usr/local/lib/node_modules
