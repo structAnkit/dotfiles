@@ -45,8 +45,8 @@ alias gg='git log'
 alias gl='git pull'
 alias gp='git push'
 alias gpom='git push origin master'
-alias gpor='git push origin HEAD:refs/for/master'
 alias gs='git status'
+alias gsub='git submodule update --init --recursive'
 
 # Homebrew
 #PATH=/usr/local/bin:$PATH

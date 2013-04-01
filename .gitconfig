@@ -20,3 +20,6 @@
 	default = tracking
 [branch]
 	autosetuprebase = always
+[alias]
+	graph = log --all --abbrev-commit --date=short --full-history --graph --format=format:'%C(bold blue)%h%C(reset)\t%C(bold white)%an, %ar (committed %cr)%C(reset)%C(bold green)%d%C(reset)%n       \t%C(white)%s%C(reset)%n'
+
