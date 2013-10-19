@@ -3,7 +3,7 @@
 	email = ankitaggarwal@gmail.com
 [github]
 	user = structAnkit
-	token = 
+	token =
 [color]
 	ui = true
 	diff = auto
@@ -13,13 +13,18 @@
 	excludesfile = /Users/ankit/.gitignore
 	editor = subl -w
 	autocrlf = input
-	safecrlf = true
 [credential]
 	helper = osxkeychain
 [push]
 	default = tracking
 [branch]
 	autosetuprebase = always
+[url "ankit@git.spotify.net"]
+	insteadof = git@git.spotify.net
+[url "ankit@git.spotify.net"]
+	insteadof = git.spotify.net
 [alias]
 	graph = log --all --abbrev-commit --date=short --full-history --graph --format=format:'%C(bold blue)%h%C(reset)\t%C(bold white)%an, %ar (committed %cr)%C(reset)%C(bold green)%d%C(reset)%n       \t%C(white)%s%C(reset)%n'
 
+[init]
+	templatedir = ~/.git_template

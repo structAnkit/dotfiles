@@ -16,7 +16,7 @@ ln -s "$HOME/Dropbox/Development" "$HOME/dev"
 open -a "$CHROME_DIR" -g "http://sourceforge.net/projects/sourcecodepro.adobe/files/latest/download"
 
 # XVIM for Xcode
-open -a "$CHROME_DIR" "http://programming.jugglershu.net/xvim"
+open -a "$CHROME_DIR" "https://github.com/jugglershu/xvim"
 
 # iTerm 2
 open -a "$CHROME_DIR" "http://code.google.com/p/iterm2/downloads/list"
@@ -27,29 +27,18 @@ open -a "$CHROME_DIR" "http://www.alfredapp.com/#download-alfred"
 # Remove repeat-blocking for Sublime Text
 defaults write -g ApplePressAndHoldEnabled -bool false
 
-# Sublime Text 2
-open -a "$CHROME_DIR" "http://www.sublimetext.com/nightly"
-ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
-
 # Sublime Text 3
 open -a "$CHROME_DIR" "http://www.sublimetext.com/3dev"
-#ln -s "/Applications/Sublime Text 3.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$HOME/bin/subl"
 
-read -s -p "Install Dropbox and Sublime Text 2 first then press ENTER to continue..."
+read -s -p "Install Dropbox and Sublime Text then press ENTER to continue..."
 
-DB_ST2_DIR="$DROPBOX_DIR/AppData/Sublime Text 2"
-ST2_DIR="$HOME/Library/Application Support/Sublime Text 2"
-mkdir -p "$ST2_DIR" "$ST2_DIR"/Installed\ Packages "$ST2_DIR/Packages" "$ST2_DIR/Settings"
-ln -s "$DB_ST2_DIR/Packages/User" "$ST2_DIR/Packages/User"
-cp "$DB_ST2_DIR/Settings/License.sublime_license" "$ST2_DIR/Settings/License.sublime_license"
-curl http://sublime.wbond.net/Package%20Control.sublime-package -o "$ST2_DIR"/Installed\ Packages/Package\ Control.sublime-package
-
-DB_ST3_DIR="$DROPBOX_DIR/AppData/Sublime Text 3"
-ST3_DIR="$HOME/Library/Application Support/Sublime Text 3"
-mkdir -p "$ST3_DIR/Packages" "$ST3_DIR/Local"
-ln -s "$DB_ST3_DIR/Packages/User" "$ST3_DIR/Packages/User"
-ln -s "$DB_ST3_DIR/Local/License.sublime_license" "$ST3_DIR/Local/License.sublime_license"
-#curl http://sublime.wbond.net/Package%20Control.sublime-package -o "$ST3_DIR"/Installed\ Packages/Package\ Control.sublime-package
+DB_ST_DIR="$DROPBOX_DIR/AppData/Sublime Text 3"
+ST_DIR="$HOME/Library/Application Support/Sublime Text 3"
+mkdir -p "$ST_DIR/Packages" "$ST_DIR/Local"
+ln -s "$DB_ST_DIR/Packages/User" "$ST_DIR/Packages/User"
+ln -s "$DB_ST_DIR/Local/License.sublime_license" "$ST_DIR/Local/License.sublime_license"
+curl http://sublime.wbond.net/Package%20Control.sublime-package -o "$ST_DIR"/Installed\ Packages/Package\ Control.sublime-package
 
 # Homebrew
 ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
@@ -74,7 +63,7 @@ rm -rf "$HOME"/.git
 brew install --disable-etcdir zsh
 source $HOME/.zshrc
 
-## Oh My ZSH
+# Oh My ZSH
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
 echo "Add your new shells to /etc/shells"
@@ -84,15 +73,14 @@ sudo vim /etc/shells
 # Languages/Platforms/SDKs
 
 # Various C/C++ Utilities
-brew tap homebrew/dupes
-brew install cmake autoconf automake apple-gcc42
+brew install cmake autoconf automake
 
 # Node.js
 brew install node
-npm install -g express jshint node-dev coffee-script grunt grunt-cli jitsu twilio sendgrid
+npm install -g express jshint grunt-cli jitsu
 
-# Go
-brew install go
+# Miscellaneous
+brew install ack watch
 
 # Java
 brew install maven
@@ -112,6 +100,3 @@ pip3 install virtualenv virtualenvwrapper
 # RVM
 curl -L "https://get.rvm.io" | bash -s stable --ruby
 gem install compass sass
-
-# Miscellaneous
-brew install ack watch bash dart rust

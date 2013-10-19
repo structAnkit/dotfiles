@@ -1,8 +1,8 @@
 # Aliases
 alias cd..="cd .."
 alias h="history"
-alias ls='ls -AFG'
-alias ll='ls -l'
+alias ls='ls -FG'
+alias ll='ls -lA'
 alias lnn='bulkSymLink'
 alias lcat='cat "$1" | less'
 alias mcat='cat "$1" | more'
@@ -34,6 +34,13 @@ export PC_FTP_PORT=11321
 export PC_MAC_ADDR='00:25:22:B4:33:92'
 
 # Git
+alias ghnew='github_new_repo $1'
+
+function github_new_repo() {
+  curl -u 'structAnkit' https://api.github.com/user/repos -d '{"name":"$1"}'
+  git remote add origin git@github.com:structAnkit/$1.git
+}
+
 alias ga='git add'
 alias gb='git branch'
 alias gc='git commit'
@@ -48,8 +55,21 @@ alias gpom='git push origin master'
 alias gs='git status'
 alias gsub='git submodule update --init --recursive'
 
+alias gpor='git push origin HEAD:refs/for/master'
+alias spcid='sp_changeId $1'
+function sp_changeId() {
+  if [ -s "$1" ]; then
+    MODULE="modules/$1/"
+  fi
+
+  scp git.spotify.net:hooks/commit-msg .git/${MODULE}hooks/
+}
+
 # Homebrew
 #PATH=/usr/local/bin:$PATH
+
+# Autojump
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
 # Programming Languages and Platforms
 
@@ -57,7 +77,7 @@ alias gsub='git submodule update --init --recursive'
 export ANDROID_HOME=$HOME/adt-bundle-mac-x86_64
 export ANDROID_SDK=$ANDROID_HOME/sdk
 export ANDROID_NDK=$ANDROID_HOME/ndk
-export ANDROID_TOOLCHAIN=$ANDROID_NDK
+export ANDROID_TOOLCHAIN=$ANDROID_NDK/toolchains/sp-arm-linux-androideabi-4.6
 PATH=$ANDROID_SDK/platform-tools:$PATH
 PATH=$ANDROID_SDK/tools:$PATH
 
@@ -71,6 +91,9 @@ alias jitd='jitsu databases'
 alias jite='jitsu env'
 alias jitl='jitsu logs'
 
+# Java
+export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+
 # Python
 #[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
 PATH=/usr/local/share/python:$PATH
@@ -82,3 +105,4 @@ PATH=/usr/local/share/python:$PATH
 #export M2_HOME=/usr/local/Cellar/maven/3.0.4
 
 export PATH
+
