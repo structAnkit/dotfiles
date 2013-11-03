@@ -36,6 +36,9 @@ source $ZSH/oh-my-zsh.sh
 # Autoload ZSH modules
 autoload -U zmv
 
+# Autojump
+[[ -s `brew --prefix`/etc/autojump.zsh ]] && . `brew --prefix`/etc/autojump.zsh
+
 if [ -f "$HOME/.profile" ]; then
     source "$HOME/.profile"
 fi
