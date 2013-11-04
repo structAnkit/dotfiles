@@ -95,7 +95,6 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 
 # Python
 #[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
-PATH=/usr/local/share/python:$PATH
 
 # Ruby
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
