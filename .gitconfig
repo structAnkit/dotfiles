@@ -11,7 +11,7 @@
 	branch = auto
 [core]
 	excludesfile = /Users/ankit/.gitignore
-	editor = subl -w
+	editor = vim
 	autocrlf = input
 [credential]
 	helper = osxkeychain
