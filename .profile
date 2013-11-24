@@ -81,13 +81,14 @@ function sp_delChangeId() {
 # Programming Languages and Platforms
 
 # Android
-export ANDROID_HOME=$HOME/adt-bundle-mac-x86_64
-export ANDROID_STUDIO="/Applications/Android Studio.app"
-export ANDROID_SDK=$ANDROID_STUDIO/sdk
+#export ANDROID_HOME=$HOME/adt-bundle-mac-x86_64
+export ANDROID_STUDIO=/Applications/Android\ Studio.app
+export ANDROID_HOME=$HOME/android
+export ANDROID_SDK=$ANDROID_HOME/sdk
 PATH=$ANDROID_SDK/platform-tools:$PATH
 PATH=$ANDROID_SDK/tools:$PATH
 
-export ANDROID_NDK=$HOME/android-ndk
+export ANDROID_NDK=$ANDROID_HOME/ndk
 export ANDROID_TOOLCHAIN=$ANDROID_NDK/toolchains/sp-arm-linux-androideabi-4.6
 
 # Node.js
