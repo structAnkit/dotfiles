@@ -17,6 +17,9 @@ alias ohmyzsh="subl ~/.oh-my-zsh"
 # Comment this out to disable weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment following line if you want to auto-update without prompting
+DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
 
