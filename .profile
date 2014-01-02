@@ -34,13 +34,6 @@ export PC_FTP_PORT=11321
 export PC_MAC_ADDR='00:25:22:B4:33:92'
 
 # Git
-alias ghnew='github_new_repo $1'
-
-function github_new_repo() {
-  curl -u 'structAnkit' https://api.github.com/user/repos -d '{"name":"$1"}'
-  git remote add origin git@github.com:structAnkit/$1.git
-}
-
 alias ga='git add'
 alias gb='git branch'
 alias gc='git commit'
@@ -74,6 +67,21 @@ function sp_delChangeId() {
 
   rm -rf .git/${MODULE}hooks/*
 }
+
+# GitHub
+alias ghnew='github_new_repo'
+
+function github_new_repo() {
+  GITHUB_USERNAME=`git config --global github.user`
+
+  CURRENT_DIRNAME=${PWD##*/}
+  REPO_NAME=${1:-$CURRENT_DIRNAME}
+
+  echo "Creating GitHub repo: $GITHUB_USERNAME/$REPO_NAME"
+  curl -u "$GITHUB_USERNAME" https://api.github.com/user/repos -d "{\"name\": \"$REPO_NAME\"}"
+  git init && git remote add origin git@github.com:$GITHUB_USERNAME/$REPO_NAME.git
+}
+
 
 # Homebrew
 #PATH=/usr/local/bin:$PATH
