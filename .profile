@@ -34,22 +34,12 @@ export PC_FTP_PORT=11321
 export PC_MAC_ADDR='00:25:22:B4:33:92'
 
 # Git
-alias ga='git add'
-alias gb='git branch'
-alias gc='git commit'
-alias gca='git commit --amend'
-alias gcac='git commit --amend -C HEAD'
-alias gcl='git clone'
-alias gco='git checkout'
-alias gd='git diff'
-alias gg='git log'
-alias gl='git pull'
-alias gp='git push'
-alias gpo='git push origin'
-alias gpom='git push origin master'
-alias gs='git status'
+alias gs='git show'
+alias gcc!='git commit -C HEAD --amend'
+alias gclo='git clone'
 alias gsub='git submodule update --init --recursive'
 
+# Spotify-specific
 alias gpor='git push origin HEAD:refs/for/master'
 alias spcid='sp_changeId $1'
 alias nospcid='sp_delChangeId $1'
