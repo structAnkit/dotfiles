@@ -25,7 +25,6 @@ function bulkSymLink() {
 }
 
 # General Environment Variables
-PATH=$HOME/bin:$PATH
 
 # Desktop PC
 export PC_USER=ankit
@@ -72,9 +71,10 @@ function github_new_repo() {
   git init && git remote add origin git@github.com:$GITHUB_USERNAME/$REPO_NAME.git
 }
 
-
 # Homebrew
-#PATH=/usr/local/bin:$PATH
+PATH=/usr/local/bin:$PATH
+PATH=$HOME/bin:$PATH
+
 
 # Programming Languages and Platforms
 
