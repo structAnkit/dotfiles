@@ -44,17 +44,17 @@ alias spcid='sp_changeId $1'
 alias nospcid='sp_delChangeId $1'
 function sp_changeId() {
   if [ -s "$1" ]; then
-    MODULE="modules/$1/"
+    MODULE="modules/$1"
   fi
 
-  scp git.spotify.net:hooks/commit-msg .git/${MODULE}hooks/
+  scp git.spotify.net:hooks/commit-msg .git/${MODULE}/hooks/
 }
 function sp_delChangeId() {
   if [ -s "$1" ]; then
-    MODULE="modules/$1/"
+    MODULE="modules/$1"
   fi
 
-  rm -rf .git/${MODULE}hooks/*
+  rm -rf .git/${MODULE}/hooks/*
 }
 
 # GitHub
