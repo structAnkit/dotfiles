@@ -102,7 +102,6 @@ PATH=$ANDROID_SDK/tools:$PATH
 export ANDROID_NDK=/Users/ankit/android/ndk
 
 # Node.js
-#export NODE_PATH=/usr/local/lib/node_modules
 PATH=/usr/local/share/npm/bin:$PATH
 
 # Nodejitsu
