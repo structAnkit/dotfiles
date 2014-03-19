@@ -20,7 +20,6 @@
     "gcl"           : false,
 
     "predef"        : [          // Extra globals.
-      "ko"
     ],
 
 
