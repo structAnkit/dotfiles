@@ -82,9 +82,6 @@ npm install -g express jshint grunt-cli jitsu
 # Miscellaneous
 brew install ack watch
 
-# Java
-brew install maven
-
 # Python
 brew install python
 pip install --upgrade distribute
@@ -96,7 +93,3 @@ brew install python3
 pip3 install --upgrade distribute
 pip3 install virtualenv virtualenvwrapper
 #pip3 install http://closure-linter.googlecode.com/files/closure_linter-latest.tar.gz
-
-# RVM
-curl -L "https://get.rvm.io" | bash -s stable --ruby
-gem install compass sass

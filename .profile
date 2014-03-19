@@ -102,14 +102,5 @@ alias jitl='jitsu logs'
 # Java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 
-# Python
-#[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
-
-# Ruby
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# Maven
-#export M2_HOME=/usr/local/Cellar/maven/3.0.4
-
 export PATH
 
