@@ -86,10 +86,8 @@ brew install ack watch
 brew install python
 pip install --upgrade distribute
 pip install virtualenv virtualenvwrapper
-pip install http://closure-linter.googlecode.com/files/closure_linter-latest.tar.gz
 
 # Python3
 brew install python3
 pip3 install --upgrade distribute
 pip3 install virtualenv virtualenvwrapper
-#pip3 install http://closure-linter.googlecode.com/files/closure_linter-latest.tar.gz
