@@ -24,12 +24,14 @@ open -a "$CHROME_DIR" "http://code.google.com/p/iterm2/downloads/list"
 # Alfred
 open -a "$CHROME_DIR" "http://www.alfredapp.com/#download-alfred"
 
-# Remove repeat-blocking for Sublime Text
-defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Sublime Text 3
 open -a "$CHROME_DIR" "http://www.sublimetext.com/3dev"
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$HOME/bin/subl"
+
+# Remove repeat-blocking for IDEs
+defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false
+defaults write com.jetbrains.intellij ApplePressAndHoldEnabled -bool false
 
 read -s -p "Install Dropbox and Sublime Text then press ENTER to continue..."
 
