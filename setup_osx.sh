@@ -87,7 +87,7 @@ brew install node
 npm install -g express jshint grunt-cli jitsu
 
 # Miscellaneous
-brew install ack watch
+brew install ack autojump watch hub docker gradle
 
 # Python
 brew install python
