@@ -94,12 +94,10 @@ PATH=$HOME/bin:$PATH
 # Programming Languages and Platforms
 
 # Android
-export ANDROID_STUDIO=/Applications/Android\ Studio.app
-export ANDROID_SDK=$ANDROID_STUDIO/sdk
-PATH=$ANDROID_SDK/platform-tools:$PATH
-PATH=$ANDROID_SDK/tools:$PATH
-
-export ANDROID_NDK=/Users/ankit/android/ndk
+export ANDROID_NDK=/Users/ankit/android-ndk
+export ANDROID_HOME=/Applications/Android\ Studio.app/sdk
+PATH=$ANDROID_HOME/platform-tools:$PATH
+PATH=$ANDROID_HOME/tools:$PATH
 
 # Node.js
 PATH=/usr/local/share/npm/bin:$PATH
