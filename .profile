@@ -141,5 +141,9 @@ alias jitl='jitsu logs'
 # Java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 
+# Ruby
+export GEM_HOME=$HOME/.gem
+PATH=$GEM_HOME/bin:$PATH
+
 export PATH
 
