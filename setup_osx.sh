@@ -11,9 +11,6 @@ CHROME_DIR="/Applications/Google Chrome.app"
 # Source Code Pro
 open -a "$CHROME_DIR" -g "http://sourceforge.net/projects/sourcecodepro.adobe/files/latest/download"
 
-# XVIM for Xcode
-open -a "$CHROME_DIR" "https://github.com/jugglershu/xvim"
-
 # iTerm 2
 open -a "$CHROME_DIR" "http://code.google.com/p/iterm2/downloads/list"
 
@@ -41,6 +38,11 @@ mkdir -p "$ST_DIR/Packages" "$ST_DIR/Local"
 ln -s "$DB_ST_DIR/Packages/User" "$ST_DIR/Packages/User"
 ln -s "$DB_ST_DIR/Local/License.sublime_license" "$ST_DIR/Local/License.sublime_license"
 curl http://sublime.wbond.net/Package%20Control.sublime-package -o "$ST_DIR"/Installed\ Packages/Package\ Control.sublime-package
+
+read -s -p "Install Xcode via App Store then press ENTER to continue..."
+
+# Alcatraz for Xcode
+curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
 
 # Xcode Command Line Tools
 xcode-select --install
