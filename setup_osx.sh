@@ -42,6 +42,9 @@ ln -s "$DB_ST_DIR/Packages/User" "$ST_DIR/Packages/User"
 ln -s "$DB_ST_DIR/Local/License.sublime_license" "$ST_DIR/Local/License.sublime_license"
 curl http://sublime.wbond.net/Package%20Control.sublime-package -o "$ST_DIR"/Installed\ Packages/Package\ Control.sublime-package
 
+# Xcode Command Line Tools
+xcode-select --install
+
 # Homebrew
 ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
 brew update
