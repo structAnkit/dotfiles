@@ -68,6 +68,7 @@
     "onevar"        : false,     // Allow only one `var` statement per function.
     "plusplus"      : false,     // Prohibit use of `++` & `--`.
     "quotmark"      : "single",  // Enforce consistent quotes
+    "scripturl"     : true,      // Suppress warnings about the use of script-targeted URLs such as `javascript:...`
     "sub"           : true,      // Tolerate all forms of subscript notation besides dot notation e.g. `dict['key']` instead of `dict.key`.
     "trailing"      : true,      // Prohibit trailing whitespaces.
     "white"         : false      // Check against strict whitespace and indentation rules.
