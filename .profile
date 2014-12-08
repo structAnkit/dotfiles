@@ -39,7 +39,11 @@ alias gclo='git clone'
 alias gsub='git submodule update --init --recursive'
 
 # Spotify-specific
-alias gpor='git push origin HEAD:refs/for/master'
+alias gpor='sp_gerrit'
+function sp_gerrit() {
+  DEFAULT_BRANCH=`git rev-parse --abbrev-ref HEAD`
+  git push origin HEAD~${1:-0}:refs/for/${2:-$DEFAULT_BRANCH}
+}
 alias spcid='sp_changeId $1'
 alias nospcid='sp_delChangeId $1'
 function sp_changeId() {
