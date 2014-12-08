@@ -84,12 +84,14 @@ brew install ack watch
 
 # Python
 brew install python
-pip install --upgrade distribute
-pip install virtualenv virtualenvwrapper
+pip install --upgrade setuptools pip
 pip install --upgrade tw2.pygmentize
+pip install --upgrade pyopenssl
+pip install --upgrade virtualenv virtualenvwrapper
 
 # Python3
 brew install python3
-pip3 install --upgrade distribute
+pip3 install --upgrade setuptools pip
 pip3 install --upgrade tw2.pygmentize
-pip3 install virtualenv virtualenvwrapper
+pip3 install --upgrade pyopenssl
+pip3 install --upgrade virtualenv virtualenvwrapper
