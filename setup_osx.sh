@@ -86,8 +86,10 @@ brew install ack watch
 brew install python
 pip install --upgrade distribute
 pip install virtualenv virtualenvwrapper
+pip install --upgrade tw2.pygmentize
 
 # Python3
 brew install python3
 pip3 install --upgrade distribute
+pip3 install --upgrade tw2.pygmentize
 pip3 install virtualenv virtualenvwrapper

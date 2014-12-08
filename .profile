@@ -4,8 +4,8 @@ alias h="history"
 alias ls='ls -FG'
 alias ll='ls -lA'
 alias lnn='bulkSymLink'
-alias json="python -mjson.tool"
-alias xml="xmllint --format -"
+alias json="python -mjson.tool | pygmentize -ljson"
+alias xml="xmllint --format - | pygmentize -lxml"
 
 # Functions
 # Figure out how to rename/move a file in one folder without having to type path in second argument
