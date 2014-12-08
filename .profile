@@ -62,8 +62,34 @@ function sp_delChangeId() {
 }
 
 # GitHub
-alias ghnew='github_new_repo'
+alias ghenew='ghe_new_repo'
+function ghe_new_repo() {
+  GITHUB_HOST='ghe.spotify.net'
+  GITHUB_API_PATH="$GITHUB_HOST/api/v3"
+  CREATE_USER_REPO_LINK="https://$GITHUB_API_PATH/user/repos"
+  CREATE_ORG_REPO_LINK="https://$GITHUB_API_PATH/orgs/ORG_NAME/repos"
 
+  CURRENT_USERNAME=`git config --global ghe.user`
+  OAUTH_TOKEN=`git config --global ghe.token`
+
+  CURRENT_DIRNAME=${PWD##*/}
+
+  if [ -z "$2" ]; then
+    CREATE_REPO_LINK=$CREATE_USER_REPO_LINK
+    REPO_USERNAME=$CURRENT_USERNAME
+    REPO_NAME=${1:-$CURRENT_DIRNAME}
+  else
+    ORG_NAME=$1
+    CREATE_REPO_LINK=${CREATE_ORG_REPO_LINK/ORG_NAME/$ORG_NAME}
+    REPO_USERNAME=$ORG_NAME
+    REPO_NAME=${2:-$CURRENT_DIRNAME}
+  fi
+
+  curl -H "Authorization: token $OAUTH_TOKEN" "$CREATE_REPO_LINK" -d "{\"name\": \"$REPO_NAME\"}"
+  git init && git remote add origin git@$GITHUB_HOST:$REPO_USERNAME/$REPO_NAME.git
+}
+
+alias ghnew='github_new_repo'
 function github_new_repo() {
   GITHUB_HOST='github.com'
   GITHUB_API_PATH="api.$GITHUB_HOST"
