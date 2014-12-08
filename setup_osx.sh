@@ -8,10 +8,6 @@ open "http://www.google.com/chrome"
 read -s -p "Install Google Chrome first then press ENTER to continue..."
 CHROME_DIR="/Applications/Google Chrome.app"
 
-# Dropbox
-open -a "$CHROME_DIR" -g "https://www.dropbox.com/downloading?os=mac"
-ln -s "$HOME/Dropbox/Development" "$HOME/dev"
-
 # Source Code Pro
 open -a "$CHROME_DIR" -g "http://sourceforge.net/projects/sourcecodepro.adobe/files/latest/download"
 
@@ -24,6 +20,10 @@ open -a "$CHROME_DIR" "http://code.google.com/p/iterm2/downloads/list"
 # Alfred
 open -a "$CHROME_DIR" "http://www.alfredapp.com/#download-alfred"
 
+# Dropbox
+open -a "$CHROME_DIR" -g "https://www.dropbox.com/downloading?os=mac"
+mkdir -p $HOME/dev
+ln -s "$HOME/Dropbox/Development" "$HOME/dev/personal"
 
 # Sublime Text 3
 open -a "$CHROME_DIR" "http://www.sublimetext.com/3dev"
