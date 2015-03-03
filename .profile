@@ -133,7 +133,7 @@ alias jite='jitsu env'
 alias jitl='jitsu logs'
 
 # Java
-export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 # Docker
 export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
