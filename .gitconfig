@@ -15,6 +15,8 @@
 	autocrlf = input
 [credential]
 	helper = osxkeychain
+[fetch]
+	prune = true
 [push]
 	default = tracking
 [branch]
