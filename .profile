@@ -58,7 +58,8 @@ function sp_delChangeId() {
 # GitHub
 alias ghenew='ghe_new_repo'
 function ghe_new_repo() {
-  GITHUB_API_HOST='https://ghe.spotify.net/api/v3'
+  GITHUB_HOST='ghe.spotify.net'
+  GITHUB_API_HOST="https://$GITHUB_HOST/api/v3"
   CREATE_USER_REPO_LINK="$GITHUB_API_HOST/user/repos"
   CREATE_ORG_REPO_LINK="$GITHUB_API_HOST/orgs/ORG_NAME/repos"
 
