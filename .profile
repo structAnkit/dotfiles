@@ -26,12 +26,6 @@ function bulkSymLink() {
 
 # General Environment Variables
 
-# Desktop PC
-export PC_USER=ankit
-export PC_HOST='192.168.1.113'
-export PC_FTP_PORT=11321
-export PC_MAC_ADDR='00:25:22:B4:33:92'
-
 # Git
 alias gs='git show'
 alias gcc!='git commit -C HEAD --amend'
