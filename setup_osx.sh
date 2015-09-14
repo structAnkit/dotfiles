@@ -41,18 +41,20 @@ curl http://sublime.wbond.net/Package%20Control.sublime-package -o "$ST_DIR"/In
 
 read -s -p "Install Xcode via App Store then press ENTER to continue..."
 
-# Alcatraz for Xcode
-curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
-
 # Xcode Command Line Tools
 xcode-select --install
+
+read -s -p "Install Xcode command line tools then press ENTER to continue..."
+
+# Alcatraz for Xcode
+curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
 
 # Homebrew
 ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
 brew update
 brew doctor
 
-read -s -p "Fix any errors with brew then press ENTER to continue..."
+read -s -p "Fix any errors with Homebrew then press ENTER to continue..."
 
 # Git
 brew install git
@@ -67,14 +69,14 @@ ln -s "$DOT_DIR"/\.* "$HOME"/
 rm -rf "$HOME"/.git
 
 # ZSH
-brew install --disable-etcdir zsh
+brew install --without-etcdir zsh
 source $HOME/.zshrc
 
 # Oh My ZSH
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
 echo "Add your new shells to /etc/shells"
-echo "i.e. /usr/local/bin/bash, /usr/local/bin/zsh"
+echo "i.e. /usr/local/bin/zsh, /usr/local/bin/bash"
 sudo vim /etc/shells
 
 # Languages/Platforms/SDKs
@@ -84,21 +86,21 @@ brew install cmake autoconf automake
 
 # Node.js
 brew install node
-npm install -g express jshint grunt-cli jitsu
+npm install -g jshint grunt-cli
 
 # Miscellaneous
-brew install ack autojump watch hub docker gradle
+brew install ack autojump watch hub docker
 
 # Python
 brew install python
-pip install --upgrade setuptools pip
+pip install --upgrade pip setuptools
 pip install --upgrade tw2.pygmentize
-pip install --upgrade pyopenssl
 pip install --upgrade virtualenv virtualenvwrapper
+pip install --upgrade pyopenssl
 
 # Python3
 brew install python3
-pip3 install --upgrade setuptools pip
+pip3 install --upgrade pip setuptools
 pip3 install --upgrade tw2.pygmentize
-pip3 install --upgrade pyopenssl
 pip3 install --upgrade virtualenv virtualenvwrapper
+pip3 install --upgrade pyopenssl
