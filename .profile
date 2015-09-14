@@ -33,28 +33,6 @@ alias gclo='git clone'
 alias gsub='git submodule update --init --recursive'
 
 # Spotify-specific
-alias gpor='sp_gerrit'
-function sp_gerrit() {
-  DEFAULT_BRANCH=`git rev-parse --abbrev-ref HEAD`
-  git push origin HEAD~${1:-0}:refs/for/${2:-$DEFAULT_BRANCH}
-}
-alias spcid='sp_changeId $1'
-alias nospcid='sp_delChangeId $1'
-function sp_changeId() {
-  if [ -s "$1" ]; then
-    MODULE="modules/$1"
-  fi
-
-  scp git.spotify.net:hooks/commit-msg .git/${MODULE}/hooks/
-}
-function sp_delChangeId() {
-  if [ -s "$1" ]; then
-    MODULE="modules/$1"
-  fi
-
-  rm -rf .git/${MODULE}/hooks/*
-}
-
 # GitHub
 alias ghenew='ghe_new_repo'
 function ghe_new_repo() {
@@ -125,12 +103,6 @@ PATH=$ANDROID_HOME/tools:$PATH
 
 # Node.js
 PATH=/usr/local/share/npm/bin:$PATH
-
-# Nodejitsu
-alias jita='jitsu apps'
-alias jitd='jitsu databases'
-alias jite='jitsu env'
-alias jitl='jitsu logs'
 
 # Java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
