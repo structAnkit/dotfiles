@@ -92,6 +92,11 @@ function ghe_new_repo() {
 PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH
 
+# iTerm2
+bindkey -e
+bindkey '[D' backward-word
+bindkey '[C' forward-word
+
 
 # Programming Languages and Platforms
 
