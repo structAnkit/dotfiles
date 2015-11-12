@@ -32,17 +32,16 @@ alias gcc!='git commit -C HEAD --amend'
 alias gclo='git clone'
 alias gsub='git submodule update --init --recursive'
 
-# Spotify-specific
-# GitHub
-alias ghenew='ghe_new_repo'
-function ghe_new_repo() {
-  GITHUB_HOST='ghe.spotify.net'
-  GITHUB_API_HOST="https://$GITHUB_HOST/api/v3"
-  CREATE_USER_REPO_LINK="$GITHUB_API_HOST/user/repos"
-  CREATE_ORG_REPO_LINK="$GITHUB_API_HOST/orgs/ORG_NAME/repos"
+# Github
+alias ghnew='github_new_repo'
+function github_new_repo() {
+  GITHUB_HOST='github.com'
+  GITHUB_API_PATH="api.$GITHUB_HOST"
+  CREATE_USER_REPO_LINK="https://$GITHUB_API_PATH/user/repos"
+  CREATE_ORG_REPO_LINK="https://$GITHUB_API_PATH/orgs/ORG_NAME/repos"
 
-  CURRENT_USERNAME=`git config --global ghe.user`
-  OAUTH_TOKEN=`git config --global ghe.token`
+  CURRENT_USERNAME=`git config --global github.user`
+  OAUTH_TOKEN=`git config --global github.token`
 
   CURRENT_DIRNAME=${PWD##*/}
 
@@ -61,15 +60,16 @@ function ghe_new_repo() {
   git init && git remote add origin git@$GITHUB_HOST:$REPO_USERNAME/$REPO_NAME.git
 }
 
-alias ghnew='github_new_repo'
-function github_new_repo() {
-  GITHUB_HOST='github.com'
-  GITHUB_API_PATH="api.$GITHUB_HOST"
-  CREATE_USER_REPO_LINK="https://$GITHUB_API_PATH/user/repos"
-  CREATE_ORG_REPO_LINK="https://$GITHUB_API_PATH/orgs/ORG_NAME/repos"
+# GitHub Enterprise
+alias ghenew='ghe_new_repo'
+function ghe_new_repo() {
+  GITHUB_HOST='NO_GHE_HOST_SPECIFIED'
+  GITHUB_API_HOST="https://$GITHUB_HOST/api/v3"
+  CREATE_USER_REPO_LINK="$GITHUB_API_HOST/user/repos"
+  CREATE_ORG_REPO_LINK="$GITHUB_API_HOST/orgs/ORG_NAME/repos"
 
-  CURRENT_USERNAME=`git config --global github.user`
-  OAUTH_TOKEN=`git config --global github.token`
+  CURRENT_USERNAME=`git config --global ghe.user`
+  OAUTH_TOKEN=`git config --global ghe.token`
 
   CURRENT_DIRNAME=${PWD##*/}
 
