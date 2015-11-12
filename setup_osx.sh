@@ -4,26 +4,27 @@
 mkdir $HOME/bin
 
 # Google Chrome
-open "http://www.google.com/chrome"
-read -s -p "Install Google Chrome first then press ENTER to continue..."
-CHROME_DIR="/Applications/Google Chrome.app"
+open -g "http://www.google.com/chrome"
 
 # Source Code Pro
 open -g "https://github.com/adobe-fonts/source-code-pro"
 
 # iTerm 2
-open -a "$CHROME_DIR" "http://code.google.com/p/iterm2/downloads/list"
+open -g "http://code.google.com/p/iterm2/downloads/list"
 
 # Alfred
-open -a "$CHROME_DIR" "http://www.alfredapp.com/#download-alfred"
+open -g "http://www.alfredapp.com/#download-alfred"
+
+# Atom
+open -g "https://atom.io"
 
 # Dropbox
-open -a "$CHROME_DIR" -g "https://www.dropbox.com/downloading?os=mac"
+open "https://www.dropbox.com/downloading?os=mac"
 mkdir -p $HOME/dev
 ln -s "$HOME/Dropbox/Development" "$HOME/dev/personal"
 
 # Sublime Text 3
-open -a "$CHROME_DIR" "http://www.sublimetext.com/3dev"
+open "http://www.sublimetext.com/3dev"
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$HOME/bin/subl"
 
 read -s -p "Install Dropbox and Sublime Text then press ENTER to continue..."
