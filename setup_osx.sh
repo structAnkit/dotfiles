@@ -9,7 +9,7 @@ read -s -p "Install Google Chrome first then press ENTER to continue..."
 CHROME_DIR="/Applications/Google Chrome.app"
 
 # Source Code Pro
-open -a "$CHROME_DIR" -g "http://sourceforge.net/projects/sourcecodepro.adobe/files/latest/download"
+open -g "https://github.com/adobe-fonts/source-code-pro"
 
 # iTerm 2
 open -a "$CHROME_DIR" "http://code.google.com/p/iterm2/downloads/list"
