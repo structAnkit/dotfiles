@@ -97,6 +97,8 @@ bindkey -e
 bindkey '[D' backward-word
 bindkey '[C' forward-word
 
+# Autojump
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 # Programming Languages and Platforms
 

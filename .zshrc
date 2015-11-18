@@ -92,6 +92,3 @@ autoload -U zmv
 if [ -f "$HOME/.profile" ]; then
     source "$HOME/.profile"
 fi
-
-# Autojump
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
