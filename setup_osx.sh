@@ -3,6 +3,17 @@
 # User binaries
 mkdir $HOME/bin
 
+# Xcode
+read -s -p "Install Xcode via App Store then press ENTER to continue..."
+
+# Xcode Command Line Tools
+xcode-select --install
+
+read -s -p "Install Xcode command line tools then press ENTER to continue..."
+
+# Alcatraz for Xcode
+curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
+
 # Google Chrome
 open -g "http://www.google.com/chrome"
 
@@ -39,16 +50,6 @@ mkdir -p "$ST_DIR/Packages" "$ST_DIR/Local"
 ln -s "$DB_ST_DIR/Packages/User" "$ST_DIR/Packages/User"
 ln -s "$DB_ST_DIR/Local/License.sublime_license" "$ST_DIR/Local/License.sublime_license"
 curl http://sublime.wbond.net/Package%20Control.sublime-package -o "$ST_DIR"/Installed\ Packages/Package\ Control.sublime-package
-
-read -s -p "Install Xcode via App Store then press ENTER to continue..."
-
-# Xcode Command Line Tools
-xcode-select --install
-
-read -s -p "Install Xcode command line tools then press ENTER to continue..."
-
-# Alcatraz for Xcode
-curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
 
 # Homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
