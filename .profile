@@ -115,9 +115,6 @@ PATH=/usr/local/share/npm/bin:$PATH
 # Java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
-# Docker
-export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
-
 # Ruby
 export GEM_HOME=$HOME/.gem
 PATH=$GEM_HOME/bin:$PATH
