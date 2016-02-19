@@ -104,8 +104,8 @@ bindkey '[C' forward-word
 PATH=/usr/local/opt/ccache/libexec:$PATH
 
 # Android
-export ANDROID_NDK=/Users/ankit/android-ndk
-export ANDROID_HOME=/Applications/Android\ Studio.app/sdk
+export ANDROID_NDK=$HOME/Library/Android/sdk/ndk-bundle
+export ANDROID_HOME=$HOME/Library/Android/sdk
 PATH=$ANDROID_HOME/platform-tools:$PATH
 PATH=$ANDROID_HOME/tools:$PATH
 
