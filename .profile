@@ -27,9 +27,7 @@ function bulkSymLink() {
 # General Environment Variables
 
 # Git
-alias gs='git show'
 alias gcc!='git commit -C HEAD --amend'
-alias gclo='git clone'
 alias gsub='git submodule update --init --recursive'
 
 # Github
