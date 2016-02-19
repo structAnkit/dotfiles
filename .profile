@@ -100,6 +100,9 @@ bindkey '[C' forward-word
 
 # Programming Languages and Platforms
 
+# C/C++
+PATH=/usr/local/opt/ccache/libexec:$PATH
+
 # Android
 export ANDROID_NDK=/Users/ankit/android-ndk
 export ANDROID_HOME=/Applications/Android\ Studio.app/sdk
