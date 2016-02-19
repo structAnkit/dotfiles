@@ -92,3 +92,6 @@ autoload -U zmv
 if [ -f "$HOME/.profile" ]; then
     source "$HOME/.profile"
 fi
+
+# Amazon Web Servicers CLI Completion
+source /usr/local/share/zsh/site-functions/_aws
