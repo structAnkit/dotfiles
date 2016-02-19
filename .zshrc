@@ -93,5 +93,10 @@ if [ -f "$HOME/.profile" ]; then
     source "$HOME/.profile"
 fi
 
+# iTerm2
+bindkey -e
+bindkey '^[[1;9D' backward-word
+bindkey '^[[1;9C' forward-word
+
 # Amazon Web Servicers CLI Completion
 source /usr/local/share/zsh/site-functions/_aws
