@@ -75,6 +75,9 @@ rm -rf $HOME/.profile $HOME/.bash_profile $HOME/.bashrc $HOME/.inputrc $HOME/.zs
 ln -s "$DOT_DIR"/\.* "$HOME"/
 rm -rf "$HOME"/.git
 
+# Bash
+brew install bash
+
 # ZSH
 brew install --without-etcdir zsh
 source $HOME/.zshrc
