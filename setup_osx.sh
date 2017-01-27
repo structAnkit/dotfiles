@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # User binaries
 mkdir $HOME/bin
