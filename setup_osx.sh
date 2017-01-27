@@ -29,6 +29,9 @@ open -g "https://www.alfredapp.com"
 # Atom
 open -g "https://atom.io"
 
+# 1Password
+open -g "https://1password.com/downloads"
+
 # Dropbox
 open "https://www.dropbox.com/downloading?os=mac"
 mkdir -p $HOME/dev
