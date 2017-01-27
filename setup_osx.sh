@@ -11,9 +11,6 @@ xcode-select --install
 
 read -s -p "Install Xcode command line tools then press ENTER to continue..."
 
-# Alcatraz for Xcode
-curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
-
 # Google Chrome
 open -g "http://www.google.com/chrome"
 
