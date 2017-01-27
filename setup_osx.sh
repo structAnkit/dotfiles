@@ -35,7 +35,9 @@ open -g "https://1password.com/downloads"
 # Dropbox
 open "https://www.dropbox.com/downloading?os=mac"
 mkdir -p $HOME/dev
-ln -s "$HOME/Dropbox/Development" "$HOME/dev/personal"
+DROPBOX_DIR="$HOME/Dropbox"
+ln -s "$HOME/Dropbox (Personal)" "$DROPBOX_DIR"
+ln -s "$DROPBOX_DIR/Development" "$HOME/dev/personal"
 
 # Sublime Text 3
 open "http://www.sublimetext.com/3dev"
