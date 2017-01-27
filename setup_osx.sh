@@ -15,13 +15,13 @@ read -s -p "Install Xcode command line tools then press ENTER to continue..."
 open -g "http://www.google.com/chrome"
 
 # Source Code Pro
-open -g "https://github.com/adobe-fonts/source-code-pro"
+open -g "https://github.com/adobe-fonts/source-code-pro/releases"
 
 # iTerm 2
-open -g "http://code.google.com/p/iterm2/downloads/list"
+open -g "https://iterm2.com/downloads.html"
 
 # Alfred
-open -g "http://www.alfredapp.com/#download-alfred"
+open -g "https://www.alfredapp.com"
 
 # Atom
 open -g "https://atom.io"
