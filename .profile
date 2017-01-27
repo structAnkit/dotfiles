@@ -5,6 +5,7 @@ alias ls='ls -FG'
 alias ll='ls -lA'
 alias lnn='bulkSymLink'
 alias json="python -mjson.tool | pygmentize -ljson"
+alias json="jq -C . | less"
 alias xml="xmllint --format - | pygmentize -lxml"
 
 # Functions

@@ -117,3 +117,6 @@ pip3 install --upgrade pip setuptools
 pip3 install --upgrade tw2.pygmentize
 pip3 install --upgrade virtualenv virtualenvwrapper
 pip3 install --upgrade pyopenssl
+
+# JSON Processor
+brew install jq
