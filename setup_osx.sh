@@ -67,10 +67,10 @@ read -s -p "Fix any errors with Homebrew then press ENTER to continue..."
 brew install git
 
 # Replace dotfiles
+zsh
 DOT_DIR=$HOME/dotfiles
 git clone git://github.com/structAnkit/dotfiles.git $DOT_DIR
 rm -rf $HOME/.profile $HOME/.bash_profile $HOME/.bashrc $HOME/.inputrc $HOME/.zshrc $HOME/.vimrc $HOME/.xvimrc $HOME/.gitconfig $HOME/.jshintrc
-zsh
 #find "$DOT_DIR/\.*" -d 0 -type f -exec ln -s {} . \;
 ln -s "$DOT_DIR"/\.* "$HOME"/
 rm -rf "$HOME"/.git
