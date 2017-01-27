@@ -20,6 +20,9 @@ open -g "https://github.com/adobe-fonts/source-code-pro/releases"
 # iTerm 2
 open -g "https://iterm2.com/downloads.html"
 
+# Dash
+open -g "https://kapeli.com/dash"
+
 # Alfred
 open -g "https://www.alfredapp.com"
 
