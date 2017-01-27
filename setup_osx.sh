@@ -54,7 +54,10 @@ ST_DIR="$HOME/Library/Application Support/Sublime Text 3"
 mkdir -p "$ST_DIR/Packages" "$ST_DIR/Local"
 ln -s "$DB_ST_DIR/Packages/User" "$ST_DIR/Packages/User"
 ln -s "$DB_ST_DIR/Local/License.sublime_license" "$ST_DIR/Local/License.sublime_license"
-curl http://sublime.wbond.net/Package%20Control.sublime-package -o "$ST_DIR"/Installed\ Packages/Package\ Control.sublime-package
+
+PACKAGE_CONTROL_FILENAME="Package Control.sublime-package"
+curl "http://sublime.wbond.net/Package%20Control.sublime-package" -o "/tmp/$PACKAGE_CONTROL_FILENAME"
+mv "/tmp/$PACKAGE_CONTROL_FILENAME" "$ST_DIR/Installed Packages/"
 
 # Homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
