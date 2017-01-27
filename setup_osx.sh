@@ -78,6 +78,10 @@ rm -rf $HOME/.profile $HOME/.bash_profile $HOME/.bashrc $HOME/.inputrc $HOME/.zs
 ln -s "$DOT_DIR"/\.* "$HOME"/
 rm -rf "$HOME"/.git
 
+# VIM Plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # Bash
 brew install bash
 
