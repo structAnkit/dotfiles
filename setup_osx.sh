@@ -45,6 +45,9 @@ open -g "https://kapeli.com/dash"
 # Atom
 open -g "https://atom.io"
 
+# IntelliJ IDEA
+open -g "https://www.jetbrains.com/idea/download"
+
 # Android Studio
 open -g "https://developer.android.com/studio"
 
