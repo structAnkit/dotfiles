@@ -3,31 +3,18 @@
 # User binaries
 mkdir $HOME/bin
 
-# Xcode
-read -s -p "Install Xcode via App Store then press ENTER to continue..."
-
-# Xcode Command Line Tools
-xcode-select --install
-
-read -s -p "Install Xcode command line tools then press ENTER to continue..."
-
+## Utilities
 # Google Chrome
 open -g "http://www.google.com/chrome"
+
+# Alfred
+open -g "https://www.alfredapp.com"
 
 # Source Code Pro
 open -g "https://github.com/adobe-fonts/source-code-pro/releases"
 
 # iTerm 2
 open -g "https://iterm2.com/downloads.html"
-
-# Dash
-open -g "https://kapeli.com/dash"
-
-# Alfred
-open -g "https://www.alfredapp.com"
-
-# Atom
-open -g "https://atom.io"
 
 # 1Password
 open -g "https://1password.com/downloads"
@@ -39,11 +26,38 @@ DROPBOX_DIR="$HOME/Dropbox"
 ln -s "$HOME/Dropbox (Personal)" "$DROPBOX_DIR"
 ln -s "$DROPBOX_DIR/Development" "$HOME/dev/personal"
 
+read -s -p "Install Dropbox then press ENTER to continue..."
+
+## Design Tools
+# Sketch
+open -g "https://sketchapp.com/"
+
+# Principle
+open -g "http://principleformac.com"
+
+# Origami Studio
+open -g "http://origami.design"
+
+## Development Tools
+# Xcode
+read -s -p "Install Xcode via App Store then press ENTER to continue..."
+
+# Xcode Command Line Tools
+xcode-select --install
+
+read -s -p "Install Xcode command line tools then press ENTER to continue..."
+
+# Dash
+open -g "https://kapeli.com/dash"
+
+# Atom
+open -g "https://atom.io"
+
 # Sublime Text 3
 open "http://www.sublimetext.com/3dev"
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$HOME/bin/subl"
 
-read -s -p "Install Dropbox and Sublime Text then press ENTER to continue..."
+read -s -p "Install Sublime Text then press ENTER to continue..."
 
 # Remove repeat-blocking for IDEs
 defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false
