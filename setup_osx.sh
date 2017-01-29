@@ -39,29 +39,20 @@ open -g "http://principleformac.com"
 open -g "http://origami.design"
 
 ## Development Tools
-# Xcode
-read -s -p "Install Xcode via App Store then press ENTER to continue..."
-
-# Xcode Command Line Tools
-xcode-select --install
-
-read -s -p "Install Xcode command line tools then press ENTER to continue..."
-
 # Dash
 open -g "https://kapeli.com/dash"
 
 # Atom
 open -g "https://atom.io"
 
+# Android Studio
+open -g "https://developer.android.com/studio"
+
 # Sublime Text 3
 open "http://www.sublimetext.com/3dev"
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$HOME/bin/subl"
 
 read -s -p "Install Sublime Text then press ENTER to continue..."
-
-# Remove repeat-blocking for IDEs
-defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false
-defaults write com.jetbrains.intellij ApplePressAndHoldEnabled -bool false
 
 DB_ST_DIR="$DROPBOX_DIR/AppData/Sublime Text 3"
 ST_DIR="$HOME/Library/Application Support/Sublime Text 3"
@@ -72,6 +63,17 @@ ln -s "$DB_ST_DIR/Local/License.sublime_license" "$ST_DIR/Local/License.sublime_
 PACKAGE_CONTROL_FILENAME="Package Control.sublime-package"
 curl "http://sublime.wbond.net/Package%20Control.sublime-package" -o "/tmp/$PACKAGE_CONTROL_FILENAME"
 mv "/tmp/$PACKAGE_CONTROL_FILENAME" "$ST_DIR/Installed Packages/"
+
+# Xcode Command Line Tools
+xcode-select --install
+read -s -p "Install Xcode command line tools then press ENTER to continue..."
+
+# Xcode
+read -s -p "Install Xcode via App Store then press ENTER to continue..."
+
+# Remove repeat-blocking for IDEs
+defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false
+defaults write com.jetbrains.intellij ApplePressAndHoldEnabled -bool false
 
 # Homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
