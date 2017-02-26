@@ -103,10 +103,12 @@ PATH=$HOME/bin:$PATH
 PATH=/usr/local/opt/ccache/libexec:$PATH
 
 # Android
-export ANDROID_NDK=$HOME/Library/Android/sdk/ndk-bundle
 export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_NDK=$ANDROID_HOME/ndk-bundle
 PATH=$ANDROID_HOME/platform-tools:$PATH
 PATH=$ANDROID_HOME/tools:$PATH
+launchctl setenv ANDROID_HOME $ANDROID_HOME
+launchctl setenv ANDROID_NDK $ANDROID_NDK
 
 # Node.js
 PATH=/usr/local/share/npm/bin:$PATH
@@ -119,4 +121,4 @@ export GEM_HOME=$HOME/.gem
 PATH=$GEM_HOME/bin:$PATH
 
 export PATH
-
+launchctl setenv PATH $PATH
