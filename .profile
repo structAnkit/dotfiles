@@ -100,6 +100,7 @@ PATH=$HOME/bin:$PATH
 # Programming Languages and Platforms
 
 # C/C++
+export USE_CCACHE=1
 PATH=/usr/local/opt/ccache/libexec:$PATH
 
 # Android
