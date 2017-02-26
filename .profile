@@ -27,6 +27,9 @@ function bulkSymLink() {
 
 # General Environment Variables
 
+# History
+export HISTCONTROL=ignorespace
+
 # Git
 alias gcc!='git commit -C HEAD --amend'
 alias gsub='git submodule update --init --recursive'
