@@ -112,7 +112,7 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 zsh
 DOT_DIR=$HOME/dotfiles
 git clone https://github.com/structAnkit/dotfiles.git $DOT_DIR
-rm -rf $HOME/.profile $HOME/.bash_profile $HOME/.bashrc $HOME/.inputrc $HOME/.zshrc $HOME/.vimrc $HOME/.xvimrc $HOME/.gitconfig $HOME/.jshintrc
+rm -rf $HOME/.profile $HOME/.bash_profile $HOME/.bashrc $HOME/.inputrc $HOME/.zshrc $HOME/.vimrc $HOME/.xvimrc $HOME/.gitconfig $HOME/.jshintrc $HOME/.atom
 #find "$DOT_DIR/\.*" -d 0 -type f -exec ln -s {} . \;
 ln -s "$DOT_DIR"/\.* "$HOME"/
 rm -rf "$HOME"/.git
