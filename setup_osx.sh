@@ -45,28 +45,6 @@ open -g "https://kapeli.com/dash"
 # Atom
 open -g "https://atom.io"
 
-# IntelliJ IDEA
-open -g "https://www.jetbrains.com/idea/download"
-
-# Android Studio
-open -g "https://developer.android.com/studio"
-
-# Sublime Text 3
-open "http://www.sublimetext.com/3dev"
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$HOME/bin/subl"
-
-read -s -p "Install Sublime Text then press ENTER to continue..."
-
-DB_ST_DIR="$DROPBOX_DIR/AppData/Sublime Text 3"
-ST_DIR="$HOME/Library/Application Support/Sublime Text 3"
-mkdir -p "$ST_DIR/Packages" "$ST_DIR/Local"
-ln -s "$DB_ST_DIR/Packages/User" "$ST_DIR/Packages/User"
-ln -s "$DB_ST_DIR/Local/License.sublime_license" "$ST_DIR/Local/License.sublime_license"
-
-PACKAGE_CONTROL_FILENAME="Package Control.sublime-package"
-curl "http://sublime.wbond.net/Package%20Control.sublime-package" -o "/tmp/$PACKAGE_CONTROL_FILENAME"
-mv "/tmp/$PACKAGE_CONTROL_FILENAME" "$ST_DIR/Installed Packages/"
-
 # Xcode Command Line Tools
 xcode-select --install
 read -s -p "Install Xcode command line tools then press ENTER to continue..."
@@ -85,47 +63,24 @@ brew doctor
 
 read -s -p "Fix any errors with Homebrew then press ENTER to continue..."
 
-# Git
-brew install git
-
-# Replace dotfiles
-zsh
-DOT_DIR=$HOME/dotfiles
-git clone git://github.com/structAnkit/dotfiles.git $DOT_DIR
-rm -rf $HOME/.profile $HOME/.bash_profile $HOME/.bashrc $HOME/.inputrc $HOME/.zshrc $HOME/.vimrc $HOME/.xvimrc $HOME/.gitconfig $HOME/.jshintrc
-#find "$DOT_DIR/\.*" -d 0 -type f -exec ln -s {} . \;
-ln -s "$DOT_DIR"/\.* "$HOME"/
-rm -rf "$HOME"/.git
+# Git / Hub
+brew install git hub
 
 # VIM Plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Bash
-brew install bash
-
-# ZSH
-brew install --without-etcdir zsh
-source $HOME/.zshrc
-
-# Oh My ZSH
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-
-echo "Add your new shells to /etc/shells"
-echo "i.e. /usr/local/bin/zsh, /usr/local/bin/bash"
-sudo vim /etc/shells
-
 # Languages/Platforms/SDKs
-
-# Various C/C++ Utilities
-brew install cmake autoconf automake
 
 # Node.js
 brew install node
 npm install -g jshint grunt-cli
 
+# JSON Processor
+brew install jq
+
 # Miscellaneous
-brew install ack autojump watch hub docker
+brew install ack autojump watch docker
 
 # Python
 brew install python
@@ -141,5 +96,27 @@ pip3 install --upgrade tw2.pygmentize
 pip3 install --upgrade virtualenv virtualenvwrapper
 pip3 install --upgrade pyopenssl
 
-# JSON Processor
-brew install jq
+# Shell
+
+# Bash
+brew install bash
+
+# ZSH
+brew install --without-etcdir zsh
+source $HOME/.zshrc
+
+# Oh My ZSH
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+
+# Replace dotfiles
+zsh
+DOT_DIR=$HOME/dotfiles
+git clone https://github.com/structAnkit/dotfiles.git $DOT_DIR
+rm -rf $HOME/.profile $HOME/.bash_profile $HOME/.bashrc $HOME/.inputrc $HOME/.zshrc $HOME/.vimrc $HOME/.xvimrc $HOME/.gitconfig $HOME/.jshintrc
+#find "$DOT_DIR/\.*" -d 0 -type f -exec ln -s {} . \;
+ln -s "$DOT_DIR"/\.* "$HOME"/
+rm -rf "$HOME"/.git
+
+echo "Add your new shells to /etc/shells"
+echo "i.e. /usr/local/bin/zsh, /usr/local/bin/bash"
+sudo vim /etc/shells
