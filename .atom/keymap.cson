@@ -8,6 +8,10 @@
 # You can create a new keybinding in this file by typing "key" and then hitting
 # tab.
 #
+
+'atom-text-editor.vim-mode-plus.insert-mode':
+  'j k': 'vim-mode-plus:activate-normal-mode'
+
 # Here's an example taken from Atom's built-in keymap:
 #
 # 'atom-text-editor':
