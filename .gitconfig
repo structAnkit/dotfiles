@@ -13,6 +13,7 @@
 	excludesfile = /Users/ankit/.gitignore
 	editor = vim
 	autocrlf = input
+	commentchar = '
 [credential]
 	helper = osxkeychain
 [fetch]
