@@ -3,7 +3,9 @@
 # User binaries
 mkdir $HOME/bin
 
+
 ## Utilities
+
 # Google Chrome
 open -g "http://www.google.com/chrome"
 
@@ -23,12 +25,13 @@ open -g "https://1password.com/downloads"
 open "https://www.dropbox.com/downloading?os=mac"
 mkdir -p $HOME/dev
 DROPBOX_DIR="$HOME/Dropbox"
-ln -s "$HOME/Dropbox (Personal)" "$DROPBOX_DIR"
 ln -s "$DROPBOX_DIR/Development" "$HOME/dev/personal"
 
 read -s -p "Install Dropbox then press ENTER to continue..."
 
+
 ## Design Tools
+
 # Sketch
 open -g "https://sketchapp.com/"
 
@@ -38,12 +41,21 @@ open -g "http://principleformac.com"
 # Origami Studio
 open -g "http://origami.design"
 
+
 ## Development Tools
-# Dash
-open -g "https://kapeli.com/dash"
+
+# VS Code
+open -g "https://code.visualstudio.com/docs/?dv=osx"
 
 # Atom
 open -g "https://atom.io"
+
+# Dash
+open -g "https://kapeli.com/dash"
+
+# VIM Plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Xcode Command Line Tools
 xcode-select --install
@@ -53,10 +65,12 @@ read -s -p "Install Xcode command line tools then press ENTER to continue..."
 read -s -p "Install Xcode via App Store then press ENTER to continue..."
 
 # Remove repeat-blocking for IDEs
-defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 defaults write com.jetbrains.intellij ApplePressAndHoldEnabled -bool false
 
-# Homebrew
+
+## Homebrew
+
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
 brew doctor
@@ -64,11 +78,7 @@ brew doctor
 read -s -p "Fix any errors with Homebrew then press ENTER to continue..."
 
 # Git / Hub
-brew install git hub
-
-# VIM Plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+brew install git hub gpg
 
 # Languages/Platforms/SDKs
 
@@ -80,23 +90,17 @@ npm install -g jshint grunt-cli
 brew install jq
 
 # Miscellaneous
-brew install ack autojump watch docker
+brew install ack autojump watch docker gpg
 
 # Python
 brew install python
-pip2 install --upgrade pip setuptools
-pip2 install --upgrade tw2.pygmentize
-pip2 install --upgrade virtualenv virtualenvwrapper
-pip2 install --upgrade pyopenssl
+pip install --upgrade pip setuptools
+pip install --upgrade tw2.pygmentize
+pip install --upgrade virtualenv virtualenvwrapper
+pip install --upgrade pyopenssl
 
-# Python3
-brew install python3
-pip3 install --upgrade pip setuptools
-pip3 install --upgrade tw2.pygmentize
-pip3 install --upgrade virtualenv virtualenvwrapper
-pip3 install --upgrade pyopenssl
 
-# Shell
+## Shells
 
 # Bash
 brew install bash
