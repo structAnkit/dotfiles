@@ -99,18 +99,6 @@ PATH=$HOME/bin:$PATH
 
 # Programming Languages and Platforms
 
-# C/C++
-export USE_CCACHE=1
-PATH=/usr/local/opt/ccache/libexec:$PATH
-
-# Android
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export ANDROID_NDK=$ANDROID_HOME/ndk-bundle
-PATH=$ANDROID_HOME/platform-tools:$PATH
-PATH=$ANDROID_HOME/tools:$PATH
-launchctl setenv ANDROID_HOME $ANDROID_HOME
-launchctl setenv ANDROID_NDK $ANDROID_NDK
-
 # Node.js
 PATH=/usr/local/share/npm/bin:$PATH
 
