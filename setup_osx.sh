@@ -94,7 +94,7 @@ brew install ack autojump watch docker gpg
 
 # Python
 brew install python
-pip install --upgrade pip setuptools
+pip install --upgrade pip setuptools wheel
 pip install --upgrade tw2.pygmentize
 pip install --upgrade virtualenv virtualenvwrapper
 pip install --upgrade pyopenssl
