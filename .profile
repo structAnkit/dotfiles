@@ -95,9 +95,12 @@ PATH=/usr/local/bin:/usr/local/sbin:$PATH
 PATH=$HOME/bin:$PATH
 
 # Autojump
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+[ -f $(brew --prefix)/etc/profile.d/autojump.sh ] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 # Programming Languages and Platforms
+
+# Fastlane
+PATH="$HOME/.fastlane/bin:$PATH"
 
 # Node.js
 PATH=/usr/local/share/npm/bin:$PATH
