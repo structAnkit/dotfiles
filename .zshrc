@@ -89,6 +89,10 @@ source $ZSH/oh-my-zsh.sh
 # Autoload ZSH modules
 autoload -U zmv
 
+if [ -f "$HOME/.profile" ]; then
+    source "$HOME/.profile"
+fi
+
 alias gsps='git show --pretty=short'
 
 # iTerm2
