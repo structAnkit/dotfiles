@@ -32,23 +32,20 @@ read -s -p "Install Dropbox then press ENTER to continue..."
 
 ## Design Tools
 
+# Figma
+open -g "https://www.figma.com/downloads"
+
 # Sketch
-open -g "https://sketchapp.com/"
+open -g "https://www.sketch.com"
 
 # Principle
 open -g "http://principleformac.com"
-
-# Origami Studio
-open -g "http://origami.design"
 
 
 ## Development Tools
 
 # VS Code
 open -g "https://code.visualstudio.com/docs/?dv=osx"
-
-# Atom
-open -g "https://atom.io"
 
 # Dash
 open -g "https://kapeli.com/dash"
@@ -91,6 +88,13 @@ brew install jq
 
 # Miscellaneous
 brew install ack autojump watch docker gpg
+
+# Ruby
+brew install ruby
+gem install bundler
+# Use local versions of these per repo
+# gem install cocoapods
+# gem install fastlane -NV
 
 # Python
 brew install python
