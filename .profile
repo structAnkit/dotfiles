@@ -90,27 +90,24 @@ function ghe_new_repo() {
   git init && git remote add origin git@$GITHUB_HOST:$REPO_USERNAME/$REPO_NAME.git
 }
 
-# Homebrew
-PATH=/usr/local/bin:/usr/local/sbin:$PATH
-PATH=$HOME/bin:$PATH
-
 # Autojump
 [ -f $(brew --prefix)/etc/profile.d/autojump.sh ] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
-# Programming Languages and Platforms
+# User binaries
+PATH=$HOME/bin:$PATH
 
-# Fastlane
-PATH="$HOME/.fastlane/bin:$PATH"
+# Programming Languages and Platforms
 
 # Node.js
 PATH=/usr/local/share/npm/bin:$PATH
 
 # Java
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 # Ruby
 export GEM_HOME=$HOME/.gem
 PATH=$GEM_HOME/bin:$PATH
+PATH=/usr/local/opt/ruby/bin:$PATH
 
 export PATH
 launchctl setenv PATH $PATH
